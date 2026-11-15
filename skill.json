@@ -1,0 +1,99 @@
+{
+  "name": "seedream-prompt-craft",
+  "display_name": "Seedream 5.5 Prompt Engineering & Visual Workflow Skill",
+  "version": "1.0.0",
+  "description": "Skill officiel pour l'agentic workbench permettant de rédiger des prompts textuels optimisés, configurer les paramètres d'API, gérer le multi-round editing, la fusion multi-images, la transparence RGBA et la décomposition en calques pour le modèle Seedream 5.5 de ByteDance Seed.",
+  "author": "Gemini Notebook",
+  "license": "MIT",
+  "triggers": [
+    "seedream",
+    "seedream 5.5",
+    "prompt seedream",
+    "générer image seedream",
+    "éditer image seedream",
+    "multi-round editing",
+    "détourage seedream",
+    "layer decomposition",
+    "fusion images seedream"
+  ],
+  "entrypoint": "SKILL.md",
+  "references": [
+    "references/5_piliers_prompting.md",
+    "references/edition_et_fusion.md",
+    "references/rgba_et_calques.md"
+  ],
+  "parameters_schema": {
+    "type": "object",
+    "properties": {
+      "mode": {
+        "type": "string",
+        "enum": [
+          "text-to-image",
+          "multi-round-editing",
+          "multi-image-fusion",
+          "rgba-transparent",
+          "layer-decomposition"
+        ],
+        "description": "Le mode d'opération Seedream 5.5 à exécuter."
+      },
+      "prompt_text": {
+        "type": "string",
+        "description": "Le prompt textuel rédigé selon les 5 piliers descriptifs."
+      },
+      "api_config": {
+        "type": "object",
+        "properties": {
+          "resolution": {
+            "type": "string",
+            "enum": [
+              "1K",
+              "1.5K",
+              "2K",
+              "3K",
+              "auto"
+            ]
+          },
+          "aspect_ratio": {
+            "type": "string",
+            "enum": [
+              "1:1",
+              "16:9",
+              "9:16",
+              "3:2",
+              "2:3",
+              "4:3",
+              "3:4",
+              "21:9"
+            ]
+          },
+          "background": {
+            "type": "string",
+            "enum": [
+              "auto",
+              "transparent",
+              "opaque"
+            ]
+          },
+          "output_format": {
+            "type": "string",
+            "enum": [
+              "png",
+              "jpeg"
+            ]
+          },
+          "images": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 10
+          }
+        }
+      }
+    },
+    "required": [
+      "mode",
+      "prompt_text"
+    ]
+  }
+}
