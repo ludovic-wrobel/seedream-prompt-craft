@@ -10,6 +10,8 @@ Un skill agentique complet pour la conception de prompts optimisés et le param�
 
 Ce skill fournit à tout agent IA (ou assistant guidé) les règles d'ingénierie sémantique, la structure spatiale et les schémas JSON API requis pour exploiter l'ensemble des capacités avancées du modèle Seedream 5.5.
 
+**Dépôt officiel** : [https://github.com/ludovic-wrobel/seedream-prompt-craft](https://github.com/ludovic-wrobel/seedream-prompt-craft)
+
 ### 🌟 Fonctionnalités prises en charge
 
 - **Text-to-Image (Règle des 5 Piliers)** : Construction de prompts descriptifs en phrases déclaratives complètes (Job-to-be-done, Sujet & Action, Emplacement spatial, Lumière & Caméra, Exclusions organiques en prose).
@@ -50,7 +52,14 @@ seedream-prompt-craft/
 
 ## 🚀 Installation & Utilisation
 
-### Pour un Agent IA (Gemini / Claude / Custom Agent)
+### Option 1 : Via Git CLI (Recommandé)
+Pour cloner directement ce skill dans votre environnement d'agent IA ou votre dossier de projet :
+
+```bash
+git clone https://github.com/ludovic-wrobel/seedream-prompt-craft.git
+```
+
+### Option 2 : Pour un Agent IA (Gemini / Claude / Custom Agent)
 1. Téléchargez ou clonez ce dépôt dans le répertoire des skills de votre agent.
 2. Déclenchez le skill lors d'une interaction en utilisant l'un des mots-clés d'activation (`seedream`, `seedream 5.5`, `prompt seedream`, `multi-round editing`, etc.).
 3. L'agent consultera `SKILL.md` et les fichiers dans `references/` pour formuler le JSON API et le prompt textuel optimisé.
